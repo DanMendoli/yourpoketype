@@ -56,13 +56,27 @@ let daysArray = [
 pokeballClickButton.addEventListener("click", showType);
 
 function showType() {
-    pokeball.classList.remove("shake");
-    setTimeout(function() {
-        pokeball.classList.add("shake");
-    }, 100);
-    setTimeout(function() {
-        typeResult.innerText = monthsArray[birthMonth.value - 1] + " " + daysArray[birthDay.value - 1]
-        }, 2000);
+    if (Number.isInteger(parseInt(birthMonth.value)) && Number.isInteger(parseInt(birthDay.value))) {
+        if ((birthMonth.value > 0 && birthMonth.value <= 12) && (birthDay.value > 0 && birthDay.value <= 31)) {
+            pokeball.classList.remove("shake");
+            pokeballClickButton.classList.remove("blink");
+        setTimeout(function() {
+            pokeball.classList.add("shake");
+            pokeballClickButton.classList.add("blink");
+        }, 100);
+        setTimeout(function() {
+            typeResult.innerText = monthsArray[birthMonth.value - 1] + " " + daysArray[birthDay.value - 1];
+            clearInputs();
+            }, 2000);
+        } else {
+            typeResult.style.fontSize = "15px";
+            typeResult.innerText = "insira valores numéricos válidos para o seu aniversário";
+            clearInputs()
+        }
+    }
 }
 
-console.log(pokeball);
+function clearInputs () {
+    birthMonth.value = "";
+    birthDay.value = "";
+}

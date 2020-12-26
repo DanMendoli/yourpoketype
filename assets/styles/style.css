@@ -28,8 +28,21 @@ header {
   100% { transform: translate(0, 0) rotate(0); }
 }
 
+@keyframes blink {
+    from { 
+        background: #e7cd3cd0;
+    }
+    to { 
+        background: #e74d3cdc; 
+    }
+}
+
 .shake {
     animation: shake 2s ease-in-out;
+}
+
+.blink {
+    animation: blink .3s alternate 6;
 }
 
 #pokeball-top {
@@ -100,7 +113,7 @@ input[type=number] {
     display: inline-block;
     position: absolute;
     left: 120px;
-    top: -18.5px;
+    top: -18px;
     width: 50px;
     height: 50px;
     background-color: #f0f0f0;
@@ -135,9 +148,11 @@ input[type=number] {
 
 #type-result {
     text-transform: uppercase;
+    width: 220px;
+    height: 50px;
+    text-align: center;
     font-weight: bold;
     letter-spacing: 2px;
     word-spacing: 4px;
     font-size: 18px;
-    transition: 1s;
 }
