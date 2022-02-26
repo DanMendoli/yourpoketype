@@ -1,5 +1,7 @@
 # Yourpoketype
 
+[Acesse](https://yourpoketype.netlify.app/)
+
 Uma aplicação simples para saber que tipo de Pokemon você é. 
 
 Construída com base nesta imagem:
@@ -10,4 +12,6 @@ Construída com base nesta imagem:
 
 * Digite o seu mês de aniversário (em números)
 * Digite o seu dia de aniversário (em números)
-* Aperte botão da pokebola e confira o resultado
+* Pressione botão da pokebola e confira o resultado
+
+
